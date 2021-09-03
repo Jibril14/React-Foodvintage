@@ -1,0 +1,22 @@
+.plate {
+    width: 300px;
+    margin: auto;
+    height: 300px;
+    text-align: center;
+    position: relative;
+    background: url("../../Images/plate.png") no-repeat center center/cover;
+}
+
+@media (min-width: 980px) and (min-height: 700px) {
+    .plate {
+        width: 700px;
+        height: 600px;
+    }
+}
+
+@media (min-width: 680px) and (min-height: 400px) {
+    .plate {
+        width: 400px;
+        height: 400px;
+    }
+}

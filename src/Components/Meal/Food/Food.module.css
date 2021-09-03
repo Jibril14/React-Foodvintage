@@ -1,0 +1,182 @@
+/**
+* Template Name: My Personal Template
+* Author: Abdullahi
+* License: free
+*/
+
+.rice1 img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animaterice 0.4s;
+}
+
+.rice2 img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animaterice 0.4s;
+}
+
+.rice3 img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animaterice 0.4s;
+}
+
+.chicken1 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animateleft 0.4s;
+}
+
+.chicken2 img {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    animation: animateleft 0.4s;
+    transform: translate(-50%, -50%);
+}
+.chicken3 img {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    animation: animateright 0.4s;
+}
+
+.chicken4 img {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    animation: animateleft 0.4s;
+}
+
+.chicken5 img {
+    position: absolute;
+    left: 40%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 0.95s ease-in-out;
+    animation: animateleft 0.4s;
+}
+
+.carrot1 img {
+    position: absolute;
+    left: 20%;
+    top: 25%;
+    animation: animateleft 0.4s;
+}
+
+.carrot2 img {
+    position: absolute;
+    left: 15%;
+    top: 30%;
+    animation: animateleft 0.4s;
+}
+
+.carrot3 img {
+    position: absolute;
+    right: 20%;
+    top: 20%;
+    animation: animateright 0.4s;
+}
+
+.carrot4 img {
+    position: absolute;
+    right: 15%;
+    top: 25%;
+
+    animation: animateright 0.4s;
+}
+
+.carrot5 img {
+    position: absolute;
+    right: 20%;
+    bottom: 20%;
+    animation: animateright 0.4s;
+}
+
+.carrot6 img {
+    position: absolute;
+    right: 15%;
+    bottom: 25%;
+    animation: animateright 0.4s;
+}
+
+.carrot7 img {
+    position: absolute;
+    left: 20%;
+    bottom: 25%;
+    animation: animateleft 0.4s;
+}
+
+.carrot8 img {
+    position: absolute;
+    left: 15%;
+    bottom: 30%;
+    animation: animateleft 0.4s;
+}
+
+.carrot9 img {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animaterice 0.4s;
+}
+
+.carrot10 img {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    animation: animaterice 0.4s;
+}
+
+.carrot11 img {
+    position: absolute;
+    right: 40%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    animation: animaterice 0.4s;
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0;
+    }
+    to {
+        left: 40%;
+        opacity: 1;
+    }
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0;
+    }
+    to {
+        left: 40%;
+        opacity: 1;
+    }
+}
+
+@keyframes animaterice {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
