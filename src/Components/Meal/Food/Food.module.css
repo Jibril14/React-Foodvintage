@@ -4,6 +4,14 @@
 * License: free
 */
 
+.rice0 img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animaterice 0.4s;
+}
+
 .rice1 img {
     position: absolute;
     left: 50%;
@@ -20,17 +28,7 @@
     animation: animaterice 0.4s;
 }
 
-.rice3 img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    animation: animaterice 0.4s;
-}
-
-.chicken1 {
-    height: 50px;
-    width: 50px;
+.chicken0 img {
     position: absolute;
     left: 15%;
     top: 50%;
@@ -38,28 +36,28 @@
     animation: animateleft 0.4s;
 }
 
-.chicken2 img {
+.chicken1 img {
     position: absolute;
     left: 50%;
     top: 15%;
     animation: animateleft 0.4s;
     transform: translate(-50%, -50%);
 }
-.chicken3 img {
+.chicken2 img {
     position: absolute;
     right: 10%;
     top: 50%;
     animation: animateright 0.4s;
 }
 
-.chicken4 img {
+.chicken3 img {
     position: absolute;
     left: 50%;
     bottom: 10%;
     animation: animateleft 0.4s;
 }
 
-.chicken5 img {
+.chicken4 img {
     position: absolute;
     left: 40%;
     top: 45%;

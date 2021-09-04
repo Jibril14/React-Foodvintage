@@ -1,0 +1,10 @@
+.foodcontrol {
+    width: 100%;
+    background-color: burlywood;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    box-shadow: 0 2px 1px #ccc;
+    margin: auto;
+    margin-top: 20px;
+}

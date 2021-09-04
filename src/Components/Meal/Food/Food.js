@@ -10,9 +10,9 @@ const restaurantFoods = (props) => {
 
     //Just pass in type as expression, though switch by default check 4 val & type match
     switch (props.type) {
-        case "rice1":
+        case "rice0":
             food = (
-                <div className={classes.rice1}>
+                <div className={classes.rice0}>
                     {/* <img
                         src={require("../../../Assets/rice1.png").default}
                         alt="Foodvintage" />
@@ -20,6 +20,13 @@ const restaurantFoods = (props) => {
                         <img src="../../../../Assets/rice2.png" alt="Foodvintage" />
                   */}
 
+                    <img src="../../../../Assets/rice0.png" alt="Foodvintage" />
+                </div>
+            );
+            break;
+        case "rice1":
+            food = (
+                <div className={classes.rice1}>
                     <img src="../../../../Assets/rice1.png" alt="Foodvintage" />
                 </div>
             );
@@ -31,14 +38,17 @@ const restaurantFoods = (props) => {
                 </div>
             );
             break;
-        case "rice3":
+
+        case "chicken0":
             food = (
-                <div className={classes.rice3}>
-                    <img src="../../../../Assets/rice3.png" alt="Foodvintage" />
+                <div className={classes.chicken0}>
+                    <img
+                        src="../../../../Assets/chicken0.png"
+                        alt="Foodvintage"
+                    />
                 </div>
             );
             break;
-
         case "chicken1":
             food = (
                 <div className={classes.chicken1}>
@@ -74,16 +84,6 @@ const restaurantFoods = (props) => {
                 <div className={classes.chicken4}>
                     <img
                         src="../../../../Assets/chicken4.png"
-                        alt="Foodvintage"
-                    />
-                </div>
-            );
-            break;
-        case "chicken5":
-            food = (
-                <div className={classes.chicken5}>
-                    <img
-                        src="../../../../Assets/chicken5.png"
                         alt="Foodvintage"
                     />
                 </div>

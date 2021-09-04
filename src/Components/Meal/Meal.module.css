@@ -6,7 +6,12 @@
     position: relative;
     background: url("../../Images/plate.png") no-repeat center center/cover;
 }
-
+.plateText {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 @media (min-width: 980px) and (min-height: 700px) {
     .plate {
         width: 700px;

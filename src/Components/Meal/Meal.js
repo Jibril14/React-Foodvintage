@@ -2,17 +2,24 @@ import React from "react";
 import classes from "./Meal.module.css";
 import Food from "./Food/Food";
 
-const meal = () => {
-    return (
-        <div className={classes.plate}>
-            <Food type="rice1" />
-            <Food type="rice2" />
-            <Food type="rice3" />
-            <Food type="chicken1" />
-            <Food type="chicken3" />
-            <Food type="carrot1" />
-            <Food type="carrot2" />
-        </div>
-    );
+const meal = (props) => {
+    let foodTransform = Object.keys(props.foodMenu)
+        .map((valueId) => {
+            console.log("valueId", valueId);
+            return [...Array(props.foodMenu[valueId])].map((_, index) => {
+                console.log("index", index);
+                return <Food key={valueId + index} type={valueId + index} />;
+            });
+        })
+        .reduce((total, vals) => {
+            return total.concat(vals);
+        });
+    if (foodTransform.length === 0) {
+        foodTransform = (
+            <p className={classes.plateText}>Please add some food</p>
+        );
+    }
+    console.log("foodtransform", foodTransform);
+    return <div className={classes.plate}>{foodTransform}</div>;
 };
 export default meal;
