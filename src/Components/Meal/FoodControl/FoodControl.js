@@ -10,6 +10,9 @@ const controls = [
 
 const foodControl = (props) => (
     <div className={classes.foodcontrol}>
+        <p>
+            Current Price: <strong>{props.price.toFixed(2)}</strong>
+        </p>
         {controls.map((val) => (
             <ControlBtn
                 key={val.label}

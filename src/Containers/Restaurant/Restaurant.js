@@ -16,7 +16,7 @@ class Restaurant extends Component {
             chicken: 0,
             carrot: 0
         },
-        totalPrice: 3
+        totalPrice: 0
     };
 
     addFoodHandler = (type) => {
@@ -71,7 +71,7 @@ class Restaurant extends Component {
         console.log("disabledMoreBtn", disabledMoreBtn);
         return (
             <Auxi>
-                <Meal foodMenu={this.state.foods} show={red} />
+                <Meal foodMenu={this.state.foods} />
                 <FoodControl
                     foodAdded={this.addFoodHandler}
                     foodRemoved={this.removeFoodHandler}
