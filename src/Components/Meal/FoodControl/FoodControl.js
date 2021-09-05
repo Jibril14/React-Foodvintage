@@ -23,6 +23,9 @@ const foodControl = (props) => (
                 disabledM={props.disableMore[val.type]}
             />
         ))}
+        <button className={classes.OrderButton} disabled={!props.purchasable}>
+            ORDER NOW
+        </button>
     </div>
 );
 

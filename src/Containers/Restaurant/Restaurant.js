@@ -16,7 +16,21 @@ class Restaurant extends Component {
             chicken: 0,
             carrot: 0
         },
-        totalPrice: 0
+        totalPrice: 0,
+        purchasable: false
+    };
+
+    updatePurchasable = (foods) => {
+        const sum = Object.keys(foods)
+            .map((idKey) => {
+                return foods[idKey];
+            })
+            .reduce((tot, val) => {
+                return tot + val;
+            });
+        console.log("sum", sum);
+
+        this.setState({ purchasable: sum > 0 });
     };
 
     addFoodHandler = (type) => {
@@ -30,6 +44,7 @@ class Restaurant extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
         this.setState({ totalPrice: newPrice, foods: updatedFood });
+        this.updatePurchasable(updatedFood);
     };
 
     removeFoodHandler = (type) => {
@@ -43,6 +58,7 @@ class Restaurant extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceAddition;
         this.setState({ totalPrice: newPrice, foods: updatedFood });
+        this.updatePurchasable(updatedFood);
     };
 
     render() {
@@ -69,15 +85,17 @@ class Restaurant extends Component {
             //console.log("disabledMoreBtn", disabledMoreBtn);
         }
         console.log("disabledMoreBtn", disabledMoreBtn);
+
         return (
             <Auxi>
-                <Meal foodMenu={this.state.foods} />
+                <Meal foodMenu={this.state.foods} show={"hidden"} />
                 <FoodControl
                     foodAdded={this.addFoodHandler}
                     foodRemoved={this.removeFoodHandler}
                     disableLess={disabledLessBtn}
                     disableMore={disabledMoreBtn}
                     price={this.state.totalPrice}
+                    purchasable={this.state.purchasable}
                 />
             </Auxi>
         );

@@ -16,14 +16,14 @@
     outline: none;
 }
 
-.foodcontrolbtn .btn:disabled {
+.foodcontrolbtn button:disabled {
     background-color: #ac9980;
     border: 1px solid #ac9980;
     color: #ccc;
     cursor: default;
 }
 
-.foodcontrolbtn .btn:hover:disabled {
+.foodcontrolbtn button:hover:disabled {
     background-color: #ac9980;
 
     color: #ccc;
