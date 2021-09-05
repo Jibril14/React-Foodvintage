@@ -20,6 +20,7 @@ const meal = (props) => {
         );
     }
     console.log("foodtransform", foodTransform);
+
     return <div className={classes.plate}>{foodTransform}</div>;
 };
 export default meal;

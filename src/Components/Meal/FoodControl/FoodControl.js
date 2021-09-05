@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./FoodControl.module.css";
-import FoodControlBtn from "./FoodControlBtns/FoodControlBtn";
+import ControlBtn from "./ControlBtns/ControlBtn";
 
 const controls = [
     { label: "rice", type: "rice" },
@@ -8,10 +8,17 @@ const controls = [
     { label: "carrot", type: "carrot" }
 ];
 
-const foodControl = () => (
+const foodControl = (props) => (
     <div className={classes.foodcontrol}>
         {controls.map((val) => (
-            <FoodControlBtn key={val.label} label={val.label} />
+            <ControlBtn
+                key={val.label}
+                label={val.label}
+                added={() => props.foodAdded(val.type)}
+                removed={() => props.foodRemoved(val.type)}
+                disabledL={props.disableLess[val.type]}
+                disabledM={props.disableMore[val.type]}
+            />
         ))}
     </div>
 );
