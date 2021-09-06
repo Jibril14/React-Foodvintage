@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Auxi from "../../Hoc/Auxi";
 import Meal from "../../Components/Meal/Meal";
 import FoodControl from "../../Components/Meal/FoodControl/FoodControl";
+import Modal from "../../Components/UI/Modal/Modal";
 
 const FOOD_PRICES = {
     rice: 0.5,
@@ -88,6 +89,7 @@ class Restaurant extends Component {
 
         return (
             <Auxi>
+                <Modal />
                 <Meal foodMenu={this.state.foods} show={"hidden"} />
                 <FoodControl
                     foodAdded={this.addFoodHandler}
