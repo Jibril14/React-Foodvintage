@@ -11,7 +11,7 @@ const controls = [
 const foodControl = (props) => (
     <div className={classes.foodcontrol}>
         <p>
-            Current Price: <strong>{props.price.toFixed(2)}</strong>
+            Current Price: <strong>${props.price.toFixed(2)}</strong>
         </p>
         {controls.map((val) => (
             <ControlBtn
@@ -23,7 +23,11 @@ const foodControl = (props) => (
                 disabledM={props.disableMore[val.type]}
             />
         ))}
-        <button className={classes.OrderButton} disabled={!props.purchasable}>
+        <button
+            className={classes.OrderButton}
+            disabled={!props.purchasable}
+            onClick={props.ordered}
+        >
             ORDER NOW
         </button>
     </div>
