@@ -3,6 +3,7 @@ import Auxi from "../../Hoc/Auxi";
 import Meal from "../../Components/Meal/Meal";
 import FoodControl from "../../Components/Meal/FoodControl/FoodControl";
 import Modal from "../../Components/UI/Modal/Modal";
+import OrderSummary from "../../Components/Meal/OrderSummary/OrderSummary";
 
 const FOOD_PRICES = {
     rice: 0.5,
@@ -18,7 +19,8 @@ class Restaurant extends Component {
             carrot: 0
         },
         totalPrice: 0,
-        purchasable: false
+        purchasable: false,
+        orderNow: false
     };
 
     updatePurchasable = (foods) => {
@@ -62,6 +64,18 @@ class Restaurant extends Component {
         this.updatePurchasable(updatedFood);
     };
 
+    orderNowHandler = () => {
+        this.setState({ orderNow: true });
+    };
+
+    orderNowCancelHandler = () => {
+        this.setState({ orderNow: false });
+    };
+
+    orderNowContinueHandler = () => {
+        alert("...Order on the way");
+    };
+
     render() {
         const disabledLessBtn = {
             ...this.state.foods
@@ -85,12 +99,27 @@ class Restaurant extends Component {
             }
             //console.log("disabledMoreBtn", disabledMoreBtn);
         }
-        console.log("disabledMoreBtn", disabledMoreBtn);
+        //console.log("disabledMoreBtn", disabledMoreBtn);
+        //console.log("disabledMoreBtn", disabledMoreBtn["rice"] === true);
+        // The obj that with key of rice is true when  disabledMoreBtn["rice"] >= 3
 
         return (
             <Auxi>
-                <Modal />
-                <Meal foodMenu={this.state.foods} show={"hidden"} />
+                <Modal
+                    show={this.state.orderNow}
+                    modalClose={this.orderNowCancelHandler}
+                >
+                    <OrderSummary
+                        foodOrder={this.state.foods}
+                        orderContinueing={this.orderNowContinueHandler}
+                        orderCancelling={this.orderNowCancelHandler}
+                        price={this.state.totalPrice}
+                    />
+                </Modal>
+                <Meal
+                    foodMenu={this.state.foods}
+                    warning={disabledMoreBtn["rice"] === true}
+                />
                 <FoodControl
                     foodAdded={this.addFoodHandler}
                     foodRemoved={this.removeFoodHandler}
@@ -98,6 +127,7 @@ class Restaurant extends Component {
                     disableMore={disabledMoreBtn}
                     price={this.state.totalPrice}
                     purchasable={this.state.purchasable}
+                    ordered={this.orderNowHandler}
                 />
             </Auxi>
         );

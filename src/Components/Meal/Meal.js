@@ -21,6 +21,13 @@ const meal = (props) => {
     }
     console.log("foodtransform", foodTransform);
 
-    return <div className={classes.plate}>{foodTransform}</div>;
+    return (
+        <div className={classes.plate}>
+            {foodTransform}
+            <p style={{ display: props.warning ? "block" : "none" }}>
+                Can't contain more rice, Pls Order another plate!
+            </p>
+        </div>
+    );
 };
 export default meal;
