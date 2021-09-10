@@ -1,10 +1,11 @@
 # FoodVintage
-Foodvintage is an online food ordering Restaurant, where users can make choices of foods from the menu and add to a  plate. Customers can filter Meals by Breakfast, Launch or Dinner, make a order and checkout.
 
-![Glamstore](https://res.cloudinary.com/webmonc/image/upload/v1663001695/FoodApp/Screenshot_401_o6elrd.png)
+Foodvintage is an online food ordering Restaurant, where users can make choices of foods from the menu and add to a plate. Customers can filter Meals by Breakfast, Launch or Dinner, make a order and checkout.
 
+![Foodvintage](https://res.cloudinary.com/webmonc/image/upload/v1663001695/FoodApp/Screenshot_401_o6elrd.png)
 
 # Getting Started
+
 Clone the repo, npm install to download dependencies.
 
 # Getting Started with Create React App
