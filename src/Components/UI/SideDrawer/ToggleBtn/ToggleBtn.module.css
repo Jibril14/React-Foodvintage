@@ -1,0 +1,10 @@
+.ToggleBtn {
+    overflow: hidden;
+    text-decoration: none;
+    color: #000 !important;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 800 !important;
+    border: none;
+}

@@ -1,0 +1,19 @@
+.navList {
+    list-style: none;
+}
+
+.navList a {
+    color: #000;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.navList:hover {
+    /** background-color: gray;**/
+}
+
+.navList a:hover,
+.navList a:active {
+    color: red;
+    border-bottom: 3px solid tan;
+}

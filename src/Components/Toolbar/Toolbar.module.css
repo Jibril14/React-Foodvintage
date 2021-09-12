@@ -1,0 +1,44 @@
+.toolbar {
+    width: 100vw;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 2px 2px #ccc;
+    transition: all.3 ease-in-out;
+}
+
+.toolbar nav {
+    width: 40%;
+    height: auto;
+    list-style: none;
+    align-items: center;
+}
+
+@media only screen and (min-width: 601px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .toolbar {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5%;
+        background-color: #fff;
+        font-size: 25px;
+    }
+
+    .navi {
+        display: none;
+    }
+}
