@@ -3,6 +3,34 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import axios from "axios";
+
+axios.defaults.baseURL =
+    "https://foodvintage-b1e94-default-rtdb.firebaseio.com";
+
+axios.interceptors.request.use(
+    (reqConfig) => {
+        console.log(reqConfig);
+
+        return reqConfig;
+    },
+    (error) => {
+        console.log("Check your Internet Connection!");
+        return Promise.reject(error);
+    }
+);
+
+axios.interceptors.response.use(
+    (response) => {
+        console.log(response);
+
+        return response;
+    },
+    (error) => {
+        console.log(error);
+        return Promise.reject(error);
+    }
+);
 
 ReactDOM.render(
     <React.StrictMode>

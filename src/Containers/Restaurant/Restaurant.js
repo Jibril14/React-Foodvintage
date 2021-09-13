@@ -4,6 +4,7 @@ import Meal from "../../Components/Meal/Meal";
 import FoodControl from "../../Components/Meal/FoodControl/FoodControl";
 import Modal from "../../Components/UI/Modal/Modal";
 import OrderSummary from "../../Components/Meal/OrderSummary/OrderSummary";
+import axios from "axios";
 
 const FOOD_PRICES = {
     rice: 0.5,
@@ -73,7 +74,25 @@ class Restaurant extends Component {
     };
 
     orderNowContinueHandler = () => {
-        alert("...Order on the way");
+        const order = {
+            foods: this.state.foods,
+            price: this.state.totalPrice,
+            customerInfo: {
+                name: "John Doe",
+                email: "john@mail.com",
+                address: {
+                    street: "No !4 Lekki",
+                    zipCode: "12549",
+                    country: "Nigeria"
+                }
+            },
+            deliveryMethod: "alx express"
+        };
+
+        axios
+            .post("/orders.json", order)
+            .then((response) => console.log(response))
+            .catch((error) => console.log(error));
     };
 
     render() {
