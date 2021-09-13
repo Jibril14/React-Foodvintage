@@ -4,6 +4,7 @@ import Meal from "../../Components/Meal/Meal";
 import FoodControl from "../../Components/Meal/FoodControl/FoodControl";
 import Modal from "../../Components/UI/Modal/Modal";
 import OrderSummary from "../../Components/Meal/OrderSummary/OrderSummary";
+import Spinner from "../../Components/UI/Spinner/Spinner";
 import axios from "axios";
 
 const FOOD_PRICES = {
@@ -21,7 +22,8 @@ class Restaurant extends Component {
         },
         totalPrice: 0,
         purchasable: false,
-        orderNow: false
+        orderNow: false,
+        loading: false
     };
 
     updatePurchasable = (foods) => {
@@ -74,6 +76,7 @@ class Restaurant extends Component {
     };
 
     orderNowContinueHandler = () => {
+        this.setState({ loading: true });
         const order = {
             foods: this.state.foods,
             price: this.state.totalPrice,
@@ -91,8 +94,14 @@ class Restaurant extends Component {
 
         axios
             .post("/orders.json", order)
-            .then((response) => console.log(response))
-            .catch((error) => console.log(error));
+            .then((response) => {
+                console.log(response);
+                this.setState({ loading: false });
+            })
+             .catch((error) => {
+                console.log(error);
+                this.setState({ loading: false });
+            })
     };
 
     render() {
@@ -122,18 +131,26 @@ class Restaurant extends Component {
         //console.log("disabledMoreBtn", disabledMoreBtn["rice"] === true);
         // The obj that with key of rice is true when  disabledMoreBtn["rice"] >= 3
 
+        let orderSummary = (
+            <OrderSummary
+                foodOrder={this.state.foods}
+                orderContinueing={this.orderNowContinueHandler}
+                orderCancelling={this.orderNowCancelHandler}
+                price={this.state.totalPrice}
+            />
+        );
+        if (this.state.loading) {
+            orderSummary = <Spinner />;
+        }
+
         return (
             <Auxi>
                 <Modal
                     show={this.state.orderNow}
                     modalClose={this.orderNowCancelHandler}
                 >
-                    <OrderSummary
-                        foodOrder={this.state.foods}
-                        orderContinueing={this.orderNowContinueHandler}
-                        orderCancelling={this.orderNowCancelHandler}
-                        price={this.state.totalPrice}
-                    />
+                   
+                    {orderSummary}
                 </Modal>
                 <Meal
                     foodMenu={this.state.foods}
