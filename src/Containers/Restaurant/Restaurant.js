@@ -6,6 +6,7 @@ import Modal from "../../Components/UI/Modal/Modal";
 import OrderSummary from "../../Components/Meal/OrderSummary/OrderSummary";
 import Spinner from "../../Components/UI/Spinner/Spinner";
 import axios from "axios";
+import Error from "../../Components/UI/Error/Error"
 
 const FOOD_PRICES = {
     rice: 0.5,
@@ -23,7 +24,8 @@ class Restaurant extends Component {
         totalPrice: 0,
         purchasable: false,
         orderNow: false,
-        loading: false
+        loading: false,
+        error: null
     };
 
     updatePurchasable = (foods) => {
@@ -73,6 +75,7 @@ class Restaurant extends Component {
 
     orderNowCancelHandler = () => {
         this.setState({ orderNow: false });
+        this.setState({error: null});
     };
 
     orderNowContinueHandler = () => {
@@ -99,8 +102,9 @@ class Restaurant extends Component {
                 this.setState({ loading: false });
             })
              .catch((error) => {
-                console.log(error);
-                this.setState({ loading: false });
+                console.log("Eroomesage", error.message);
+                this.setState({error: error.message});
+                this.setState({loading: false });
             })
     };
 
@@ -149,7 +153,7 @@ class Restaurant extends Component {
                     show={this.state.orderNow}
                     modalClose={this.orderNowCancelHandler}
                 >
-                   
+                   <Error showErr={this.state.error} error={this.state.error}/>
                     {orderSummary}
                 </Modal>
                 <Meal
