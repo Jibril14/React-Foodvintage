@@ -6,7 +6,6 @@ import Modal from "../../Components/UI/Modal/Modal";
 import OrderSummary from "../../Components/Meal/OrderSummary/OrderSummary";
 import Spinner from "../../Components/UI/Spinner/Spinner";
 import axios from "axios";
-import Error from "../../Components/UI/Error/Error"
 
 const FOOD_PRICES = {
     rice: 0.5,
@@ -24,11 +23,10 @@ class Restaurant extends Component {
         error: null
     };
 
-    componentDidMount () {
-        axios.get("/foods.json")
-        .then(response =>{
-            this.setState({foods: response.data});
-        })
+    componentDidMount() {
+        axios.get("/foods.json").then((response) => {
+            this.setState({ foods: response.data });
+        });
     }
 
     updatePurchasable = (foods) => {
@@ -78,38 +76,25 @@ class Restaurant extends Component {
 
     orderNowCancelHandler = () => {
         this.setState({ orderNow: false });
-        this.setState({error: null});
+        this.setState({ error: null });
     };
-    //https://foodvintage-b1e94-default-rtdb.firebaseio.com/foods
-    orderNowContinueHandler = () => {
-        this.setState({ loading: true });
-        const order = {
-            foods: this.state.foods,
-            price: this.state.totalPrice,
-            customerInfo: {
-                name: "John Doe",
-                email: "john@mail.com",
-                address: {
-                    street: "No !4 Lekki",
-                    zipCode: "12549",
-                    country: "Nigeria"
-                }
-            },
-            deliveryMethod: "alx express"
-        };
 
-        axios
-            .post("/orders.json", order)
-            .then((response) => {
-                console.log(response);
-                this.setState({ loading: false });
-                this.setState({ orderNow: false });
-            })
-             .catch((error) => {
-                console.log("Eroomesage", error.message);
-                this.setState({error: error.message});
-                this.setState({loading: false });
-            })
+    orderNowContinueHandler = () => {
+        const queryParams = [];
+        for (let x in this.state.foods) {
+            queryParams.push(
+                encodeURIComponent(x) +
+                    "=" +
+                    encodeURIComponent(this.state.foods[x])
+            );
+        }
+        queryParams.push("price=" + this.state.totalPrice);
+        const queryString = queryParams.join("&");
+
+        this.props.history.push({
+            pathname: "/checkout",
+            search: "?" + queryString
+        });
     };
 
     render() {
@@ -140,55 +125,50 @@ class Restaurant extends Component {
         // The obj that with key of rice is true when  disabledMoreBtn["rice"] >= 3
 
         let foods = <Spinner />;
-        let orderSummary = null
+        let orderSummary = null;
 
-
-        if(this.state.foods){
-            foods =
+        if (this.state.foods) {
+            foods = (
                 <Auxi>
-                <Meal
-                    foodMenu={this.state.foods}
-                    warning={disabledMoreBtn["rice"] === true}
-                />
-                <FoodControl
-                    foodAdded={this.addFoodHandler}
-                    foodRemoved={this.removeFoodHandler}
-                    disableLess={disabledLessBtn}
-                    disableMore={disabledMoreBtn}
-                    price={this.state.totalPrice}
-                    purchasable={this.state.purchasable}
-                    ordered={this.orderNowHandler}
-                />
-             </Auxi>
-          
-           
+                    <Meal
+                        foodMenu={this.state.foods}
+                        warning={disabledMoreBtn["rice"] === true}
+                    />
+                    <FoodControl
+                        foodAdded={this.addFoodHandler}
+                        foodRemoved={this.removeFoodHandler}
+                        disableLess={disabledLessBtn}
+                        disableMore={disabledMoreBtn}
+                        price={this.state.totalPrice}
+                        purchasable={this.state.purchasable}
+                        ordered={this.orderNowHandler}
+                    />
+                </Auxi>
+            );
+
             orderSummary = (
-            <OrderSummary
-                foodOrder={this.state.foods}
-                orderContinueing={this.orderNowContinueHandler}
-                orderCancelling={this.orderNowCancelHandler}
-                price={this.state.totalPrice}
-            />
-        );
+                <OrderSummary
+                    foodOrder={this.state.foods}
+                    orderContinueing={this.orderNowContinueHandler}
+                    orderCancelling={this.orderNowCancelHandler}
+                    price={this.state.totalPrice}
+                />
+            );
         }
 
-       
         if (this.state.loading) {
             orderSummary = <Spinner />;
         }
 
-       
         return (
             <Auxi>
                 <Modal
                     show={this.state.orderNow}
                     modalClose={this.orderNowCancelHandler}
                 >
-                   <Error showErr={this.state.error} error={this.state.error}/>
                     {orderSummary}
                 </Modal>
-               {foods}
-               
+                {foods}
             </Auxi>
         );
     }
