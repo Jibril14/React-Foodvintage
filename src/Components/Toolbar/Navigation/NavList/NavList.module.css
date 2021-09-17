@@ -15,5 +15,4 @@
 .navList a:hover,
 .navList a:active {
     color: red;
-    border-bottom: 3px solid tan;
 }
