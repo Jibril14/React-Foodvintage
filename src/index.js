@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
+import { BrowserRouter } from "react-router-dom";
 
 axios.defaults.baseURL =
     "https://foodvintage-b1e94-default-rtdb.firebaseio.com";
@@ -32,12 +33,13 @@ axios.interceptors.response.use(
     }
 );
 
-ReactDOM.render(
-    <React.StrictMode>
+const app = (
+    <BrowserRouter>
         <App />
-    </React.StrictMode>,
-    document.getElementById("root")
+    </BrowserRouter>
 );
+
+ReactDOM.render(app, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
