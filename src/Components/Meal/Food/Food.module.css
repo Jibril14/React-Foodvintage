@@ -67,17 +67,24 @@
     animation: animateleft 0.4s;
 }
 
+.carrot0 img {
+    position: absolute;
+    left: 20%;
+    top: 16%;
+    animation: animateleft 0.4s;
+}
+
 .carrot1 img {
     position: absolute;
     left: 20%;
-    top: 25%;
+    top: 23%;
     animation: animateleft 0.4s;
 }
 
 .carrot2 img {
     position: absolute;
     left: 15%;
-    top: 30%;
+    top: 28%;
     animation: animateleft 0.4s;
 }
 
@@ -98,15 +105,15 @@
 
 .carrot5 img {
     position: absolute;
-    right: 20%;
-    bottom: 20%;
+    right: 27%;
+    bottom: 27%;
     animation: animateright 0.4s;
 }
 
 .carrot6 img {
     position: absolute;
-    right: 15%;
-    bottom: 25%;
+    right: 25%;
+    bottom: 22%;
     animation: animateright 0.4s;
 }
 

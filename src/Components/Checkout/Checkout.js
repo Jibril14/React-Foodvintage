@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import classes from "./Checkout.module.css";
 import Meal from "../Meal/Meal";
 import Button from "../UI/Button/Button";
 import { Route } from "react-router-dom";
@@ -29,46 +30,49 @@ class Checkout extends Component {
     };
 
     checkoutContinuedHandler = () => {
-        this.props.history.replace("/checkout/contact-data");
+        this.props.history.replace("/checkout/contact-data#h4");
     };
     render() {
         return (
-            <div>
-                <h1>Do have a wonderful meal!</h1>
-                <div
-                    style={{
-                        width: "300px",
-                        margin: "auto",
-                        backgroundColor: "red",
+            <div className={classes.Contact}>
+                <div>
+                    <h1>Do have a wonderful meal!</h1>
+                    <div
+                        style={{
+                            width: "300px",
+                            margin: "auto",
+                            position: "relative"
+                        }}
+                    >
+                        <Meal foodMenu={this.state.foods} />
+                        <div>
+                            <Button
+                                btnType="Danger"
+                                clicked={this.checkoutCancelledHandler}
+                            >
+                                CANCEL
+                            </Button>
+                            <Button
+                                btnType="Success"
+                                clicked={this.checkoutContinuedHandler}
+                            >
+                                CONTINUE
+                            </Button>
+                        </div>
+                    </div>
 
-                        position: "relative"
-                    }}
-                >
-                    <Meal foodMenu={this.state.foods} />
+                    <Route
+                        path={this.props.match.path + "/contact-data"}
+                        hash="#h4"
+                        render={(props) => (
+                            <ContactInfo
+                                foods={this.state.foods}
+                                totalPrice={this.state.totalPrice}
+                                {...props}
+                            />
+                        )}
+                    />
                 </div>
-                <Button
-                    btnType="Danger"
-                    clicked={this.checkoutCancelledHandler}
-                >
-                    CANCEL
-                </Button>
-                <Button
-                    btnType="Success"
-                    clicked={this.checkoutContinuedHandler}
-                >
-                    CONTINUE
-                </Button>
-
-                <Route
-                    path={this.props.match.path + "/contact-data"}
-                    render={(props) => (
-                        <ContactInfo
-                            foods={this.state.foods}
-                            totalPrice={this.state.totalPrice}
-                            {...props}
-                        />
-                    )}
-                />
             </div>
         );
     }

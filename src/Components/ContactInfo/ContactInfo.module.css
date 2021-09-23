@@ -10,6 +10,14 @@
 
 .input {
     display: block;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+}
+input:focus,
+input:valid {
+    outline: 0;
+    border-bottom-color: rgba(235, 104, 92, 0.842);
 }
 
 @media (min-width: 601px) {

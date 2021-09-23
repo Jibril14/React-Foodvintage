@@ -15,7 +15,12 @@ const FOOD_PRICES = {
 
 class Restaurant extends Component {
     state = {
-        foods: null,
+        foods: {
+            rice: 0,
+            chicken: 0,
+            carrot: 0
+        },
+        //foods: null,
         totalPrice: 0,
         purchasable: false,
         orderNow: false,
@@ -37,7 +42,6 @@ class Restaurant extends Component {
             .reduce((tot, val) => {
                 return tot + val;
             });
-        console.log("sum", sum);
 
         this.setState({ purchasable: sum > 0 });
     };
@@ -118,11 +122,7 @@ class Restaurant extends Component {
             } else {
                 disabledMoreBtn["carrot"] = disabledMoreBtn["carrot"] >= 10;
             }
-            //console.log("disabledMoreBtn", disabledMoreBtn);
         }
-        //console.log("disabledMoreBtn", disabledMoreBtn);
-        //console.log("disabledMoreBtn", disabledMoreBtn["rice"] === true);
-        // The obj that with key of rice is true when  disabledMoreBtn["rice"] >= 3
 
         let foods = <Spinner />;
         let orderSummary = null;

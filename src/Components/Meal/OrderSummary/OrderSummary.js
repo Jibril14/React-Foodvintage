@@ -14,7 +14,7 @@ const orderSummary = (props) => {
     return (
         <Auxi>
             <h3>Your Order</h3>
-            <p> Delicious Meal, Enjoy Your Launch</p>
+            <p> Delicious Meal, Bon Appetit</p>
             <ul>{foodToOrder}</ul>
             <p>
                 <strong>Total Price: ${props.price.toFixed(2)}</strong>

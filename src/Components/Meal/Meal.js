@@ -7,7 +7,6 @@ const meal = (props) => {
         .map((valueId) => {
             console.log("valueId", valueId);
             return [...Array(props.foodMenu[valueId])].map((_, index) => {
-                console.log("index", index);
                 return <Food key={valueId + index} type={valueId + index} />;
             });
         })
@@ -24,7 +23,11 @@ const meal = (props) => {
     return (
         <div className={classes.plate}>
             {foodTransform}
-            <p style={{ display: props.warning ? "block" : "none" }}>
+            <p
+                style={{
+                    display: props.warning ? "block" : "none"
+                }}
+            >
                 Can't contain more rice, Pls Order another plate!
             </p>
         </div>

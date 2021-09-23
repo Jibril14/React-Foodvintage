@@ -8,33 +8,34 @@ const restaurantFoods = (props) => {
         type: PropTypes.string.isRequired
     };
 
-    //Just pass in type as expression, though switch by default check 4 val & type match
     switch (props.type) {
         case "rice0":
             food = (
                 <div className={classes.rice0}>
-                    {/* <img
-                        src={require("../../../Assets/rice1.png").default}
-                        alt="Foodvintage" />
-                        or
-                        <img src="../../../../Assets/rice2.png" alt="Foodvintage" />
-                  */}
-
-                    <img src="../../../../Assets/rice0.png" alt="Foodvintage" />
+                    <img
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030660/FoodApp/Ingredients/rice0_nhrfex.png"
+                        alt="Foodvintage"
+                    />
                 </div>
             );
             break;
         case "rice1":
             food = (
                 <div className={classes.rice1}>
-                    <img src="../../../../Assets/rice1.png" alt="Foodvintage" />
+                    <img
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030660/FoodApp/Ingredients/rice1_cgbv9r.png"
+                        alt="Foodvintage"
+                    />
                 </div>
             );
             break;
         case "rice2":
             food = (
                 <div className={classes.rice2}>
-                    <img src="../../../../Assets/rice2.png" alt="Foodvintage" />
+                    <img
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030660/FoodApp/Ingredients/rice333_f5eoh0.png"
+                        alt="Foodvintage"
+                    />
                 </div>
             );
             break;
@@ -43,7 +44,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.chicken0}>
                     <img
-                        src="../../../../Assets/chicken0.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030659/FoodApp/Ingredients/chicken0_qrtwzr.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -53,7 +54,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.chicken1}>
                     <img
-                        src="../../../../Assets/chicken1.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030660/FoodApp/Ingredients/chicken1_mk4h6b.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -63,7 +64,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.chicken2}>
                     <img
-                        src="../../../../Assets/chicken2.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030659/FoodApp/Ingredients/chicken2_jmeqsu.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -73,7 +74,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.chicken3}>
                     <img
-                        src="../../../../Assets/chicken3.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030660/FoodApp/Ingredients/chicken3_ksprg5.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -83,7 +84,18 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.chicken4}>
                     <img
-                        src="../../../../Assets/chicken4.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030658/FoodApp/Ingredients/chicken4_ftkn9k.png"
+                        alt="Foodvintage"
+                    />
+                </div>
+            );
+            break;
+
+        case "carrot0":
+            food = (
+                <div className={classes.carrot0}>
+                    <img
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030659/FoodApp/Ingredients/carrot0_xx3ecm.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -94,7 +106,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot1}>
                     <img
-                        src="../../../../Assets/carrot1.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030660/FoodApp/Ingredients/carrot1_hb97op.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -104,7 +116,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot2}>
                     <img
-                        src="../../../../Assets/carrot2.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030660/FoodApp/Ingredients/carrot2_azf3fz.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -114,7 +126,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot3}>
                     <img
-                        src="../../../../Assets/carrot3.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030658/FoodApp/Ingredients/carrot3_oqhoaa.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -124,7 +136,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot4}>
                     <img
-                        src="../../../../Assets/carrot4.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030658/FoodApp/Ingredients/carrot4_c7mshn.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -134,7 +146,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot5}>
                     <img
-                        src="../../../../Assets/carrot5.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030660/FoodApp/Ingredients/carrot5_rjmljs.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -144,7 +156,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot6}>
                     <img
-                        src="../../../../Assets/carrot6.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030658/FoodApp/Ingredients/carrot6_j7nlsc.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -154,7 +166,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot7}>
                     <img
-                        src="../../../../Assets/carrot7.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030659/FoodApp/Ingredients/carrot7_jy53j4.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -164,7 +176,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot8}>
                     <img
-                        src="../../../../Assets/carrot8.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030659/FoodApp/Ingredients/carrot8_v1r3lz.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -174,7 +186,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot9}>
                     <img
-                        src="../../../../Assets/carrot9.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030659/FoodApp/Ingredients/carrot9_bfzjfv.png"
                         alt="Foodvintage"
                     />
                 </div>
@@ -184,7 +196,7 @@ const restaurantFoods = (props) => {
             food = (
                 <div className={classes.carrot10}>
                     <img
-                        src="../../../../Assets/carrot10.png"
+                        src="https://res.cloudinary.com/webmonc/image/upload/v1665030658/FoodApp/Ingredients/carrot10_z36zde.png"
                         alt="Foodvintage"
                     />
                 </div>
