@@ -1,0 +1,16 @@
+.footer {
+    text-align: center !important;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: #fff;
+    background-color: #000 !important;
+    padding: 8px 16px;
+    margin-top: 16px;
+}
+.footer a {
+    color: #fb9d06;
+}
+
+.footer a:hover {
+    color: hotpink;
+}
