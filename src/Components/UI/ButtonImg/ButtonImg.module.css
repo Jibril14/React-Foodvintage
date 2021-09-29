@@ -1,0 +1,24 @@
+.btnImg {
+    background-color: #fff;
+    border: 1px solid #ff1500;
+    color: #000;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 4px;
+    cursor: pointer;
+}
+.btnImg .Txt {
+    color: #000;
+
+    margin: 15px 0;
+}
+.btnImg img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: center center;
+    margin: 0 4px 0 0;
+}
