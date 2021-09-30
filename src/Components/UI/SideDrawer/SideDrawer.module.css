@@ -14,7 +14,9 @@
 nav {
     margin: 20px 0;
 }
-
+.Link {
+    margin: 20px 0;
+}
 @media (min-width: 601px) {
     .SideDrawer {
         display: none;

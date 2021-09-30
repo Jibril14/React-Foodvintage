@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import Auxi from "../../Hoc/Auxi";
 import classes from "./Layout.module.css";
 import Toolbar from "../Toolbar/Toolbar";
+import Footer from "../Toolbar/Footer/Footer";
 import SideDrawer from "../UI/SideDrawer/SideDrawer";
+import Banner from "../UI/Banner/Banner";
+import { Route } from "react-router-dom";
 
 class Layout extends Component {
     state = {
@@ -28,6 +31,10 @@ class Layout extends Component {
                 />
                 <Toolbar drawToggle={this.sideDrawerToggle} />
                 <main className={classes.main}>{this.props.children}</main>
+                <Route path="/" exact>
+                    <Banner />
+                </Route>
+                <Footer />
             </Auxi>
         );
     }

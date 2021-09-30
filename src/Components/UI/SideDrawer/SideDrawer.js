@@ -17,8 +17,15 @@ const sideDrawer = (props) => {
                 <Logo link="/" height="auto" style={{ textAlign: "left" }} />
 
                 <nav>
-                    <NavList className={classes.Navlist}>Homee</NavList>
-                    <NavList className={classes.Navlist}>Jessi</NavList>
+                    <p className={classes.Link}>
+                        <NavList link="/">Home</NavList>
+                    </p>
+                    <p className={classes.Link}>
+                        <NavList link="/order">Orders</NavList>
+                    </p>
+                    <p className={classes.Link}>
+                        <NavList link="/join-us">Connect</NavList>
+                    </p>
                 </nav>
             </div>
         </Auxi>

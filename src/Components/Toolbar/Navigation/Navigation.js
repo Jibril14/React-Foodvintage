@@ -4,8 +4,10 @@ import NavList from "./NavList/NavList";
 
 const navigation = () => (
     <ul className={classes.navigation}>
-        <NavList link="/">Home</NavList>
-        <NavList link="/order">Your Orders</NavList>
+        <NavList link="/" exact>
+            Home
+        </NavList>
+        <NavList link="/order">Orders</NavList>
     </ul>
 );
 

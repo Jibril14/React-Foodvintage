@@ -13,17 +13,36 @@
     padding: 0 40px;
     box-shadow: 0 2px 2px #ccc;
     transition: all.3 ease-in-out;
+    z-index: 100;
 }
 
-.toolbar nav {
-    width: 40%;
-    height: auto;
+.toolbar .Nav {
+    width: 35%;
+    height: 100%;
     list-style: none;
     align-items: center;
+    display: flex;
+}
+
+.menuLogo img {
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+    object-position: center center;
+    margin: 4px 4px 0 4px;
+}
+
+@media screen and (max-width: 980px) and (min-width: 601px) {
+    .toolbar .Nav {
+        width: 55%;
+    }
 }
 
 @media only screen and (min-width: 601px) {
     .menu {
+        display: none;
+    }
+    .menuLogo {
         display: none;
     }
 }
@@ -38,7 +57,7 @@
         font-size: 25px;
     }
 
-    .navi {
+    .toolbar .Nav {
         display: none;
     }
 }

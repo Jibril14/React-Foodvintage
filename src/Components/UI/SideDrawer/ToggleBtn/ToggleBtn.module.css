@@ -5,6 +5,6 @@
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
-    z-index: 800 !important;
     border: none;
+    z-index: 800;
 }
